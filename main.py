@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask('app')
 
@@ -16,25 +16,31 @@ def q2():
   global crave
   crave = request.form["craving"]
   global x
-  x = f'You want to eat {crave}'
+  x = f'You want to eat {crave}\n'
   return render_template('question2.html')
 
 @app.route('/question3', methods=['POST'])
 def q3():
   global restrict
-  restrictions = request.form["restrictions"]
-  return render_template('question3.html', restrict=restrictions)
+  restrict = request.form["restrictions"]
+  global y 
+  y = f'You cannot eat {restrict}\n'
+  return render_template('question3.html')
   
 @app.route('/question4', methods=['POST'])
 def q4():
   global money
   money = request.form["budget"]
+  global z
+  z = f'You have a {money}\n'
   return render_template('question4.html')
 
 @app.route('/results', methods=['POST'])
 def results():
   global health
   health = request.form["healthRating"]
+  global h
+  h = f'Health-wise: {health}\n'
   return render_template('results.html')
   
 @app.route('/chinese')
@@ -42,13 +48,12 @@ def chinese():
   if crave == 'Chinese':
     return render_template('chinese.html')
   else:
-    str(x)
-    return render_template('unfinished.html')
+    return render_template('unfinished.html', x=f'You want to eat {crave}\n', y = f'You cannot eat {restrict}\n'
+                           , z = f'You have a {money}\n', h = f'Health-wise: {health}\n')
   
 @app.route('/unfinished')
 def unfinished():
-  str(x)
-  return render_template('unfinished', crave=crave)
+  return render_template('unfinished.html')
 
 
 app.run(host='0.0.0.0', port=8080)
