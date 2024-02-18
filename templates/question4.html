@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <style>/* question4.css */
+
+    main {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #fff3ed;
+    }
+    
+    
+    .container {
+        /* display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; */
+        width: 50%; 
+        height: auto; 
+        margin: 60px auto;
+        background-color: #FFFFFF; 
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        padding: 20px; /* Add padding */
+    }
+    
+    
+    header {
+        margin-bottom: 20px; /* Add space between header and form */
+    }
+    
+    h1 {
+        color: #D84012; /* Orange heading color */
+        margin: 0;
+    }
+    
+    input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 80%;
+        height: 20px; /* Adjusted height of the range input */
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        position: relative; /* Make the range input a positioning context */
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        background: #4CAF50;
+        cursor: pointer;
+        position: relative; /* Make the thumb a positioning context */
+    }
+    
+    input[type="range"]:hover {
+        opacity: 1;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb:before {
+        content: "1"; /* Label for the minimum value */
+        position: absolute;
+        bottom: -30px;
+        left: 0; /* Adjust position to align with the start */
+        color: #D84012; /* Orange text color */
+        transform: translateX(-50%); /* Center the label horizontally */
+    }
+    
+    input[type="range"]::-webkit-slider-thumb:after {
+        content: "5"; /* Label for the maximum value */
+        position: absolute;
+        bottom: -30px;
+        right: 0; /* Adjust position to align with the end */
+        color: #D84012; /* Orange text color */
+        transform: translateX(50%); /* Center the label horizontally */
+    }
+    
+    
+    .labels {
+        display: flex;
+        justify-content: space-around; 
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .labels span {
+        flex: 1;
+        text-align: center; 
+        color: #D84012; /* Orange text color */
+    }
+    
+    
+    form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    button {
+        margin-top: 20px;
+        padding: 15px 30px; /* Increase button padding */
+        background-color: #60c463; /* Green button color */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px; /* Decrease button font size */
+        transition: background-color 0.3s; /* Smooth transition for background color */
+    }
+    
+    button:hover {
+        background-color: #3a903c; /* Darker green on hover */
+    }
+    
+    
+    /* Back button */
+    .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 30px;
+        background-color: #f15856; /* Coral button color */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+    
+    .back-button:hover {
+        background-color: #D20033; /* Darker coral on hover */
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavor Finder - Health Scale</title>
+    <link rel="stylesheet" href="css/question4.css">
+</head>
+<body style="background-image: url('https://media.istockphoto.com/id/165061345/sv/vektor/kitchen.jpg?s=612x612&w=0&k=20&c=SuRNxdeZ4XgjEPx2r-gd8xPAUTv7jFHW8DgG8LV4RkY='); background-size: cover;">
+    <div class="container">
+    <header>
+        <h1>Rate how healthy you want your meal to be</h1>
+    </header>
+
+    <main>
+            <form action="/results" method="post">
+                <input type="range" name="healthRating" min="1" max="5" step="1">
+                <div class="labels">
+                    <span>I want junk food!</span>
+                    <span>Don't care.</span>
+                    <span>I want to eat healthy!</span>
+                </div>
+                <div class="labels">
+                    <span>ಥ_ಥ</span>
+                    <span>¯\(ツ)/¯</span>
+                    <span>(☆｀• ω •´)</span>
+                </div>
+                <div>
+                    <a href="/question1" class="back-button">Back</a>
+                    <button type="submit">Submit</button>
+                </div>    
+            </form>
+    </main>
+    </div>
+
+</body>
+</html>
+
