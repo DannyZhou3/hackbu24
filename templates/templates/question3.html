@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <style> 
+    main {
+       width: 100%;
+       max-width: 600px;
+       margin: 0 auto;
+       padding: 20px;
+    }
+    
+    
+    body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding: 0;
+       text-align: center;
+       background-color: #fff3ed;
+    }
+    
+    
+    h1 {
+       margin-top: 20px;
+       color: #D84012; /* Orange heading color */
+    }
+    
+    
+    #heading2 {
+       color: #D84012;
+    }
+    
+    
+    .cuisine-container {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr); /* Three pictures in each row */
+       grid-gap: 30px; /* Increased gap between images */
+       justify-content: center;
+       margin-top: 30px; /* Add some space between heading and images */
+    }
+    
+    
+    .cuisine-option {
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+    
+    
+    img {
+       width: 200px; /* Adjusted image width */
+       height: 200px; /* Adjusted image height */
+       object-fit: cover; /* Maintain aspect ratio and cover entire container */
+       border-radius: 10px; /* Rounded corners for images */
+       margin: 0;
+    }
+    
+    
+    label {
+       margin-top: 10px;
+       color: #D84012; /* Orange label color */
+       border: 2px solid transparent; /* Add border to label */
+       border-radius: 10px; /* Rounded corners for label */
+       transition: border-color 0.3s; /* Smooth transition for border color */
+       cursor: pointer; /* Change cursor on hover */
+    }
+    
+    
+    /* Apply border when radio button is checked */
+    input[type="radio"]:checked + label {
+       border: 5px solid;
+       border-color: #5EA700; /* Green border color */
+    }
+    
+    
+    label:hover {
+       border: 5px solid;
+       border-color: #5EA700;
+    }
+    
+    
+    span {
+       font-size: 20px;
+       font-weight: bold; /* Bold cuisine names */
+       margin-top: 5px;
+       color: #D84012; /* Orange text color */
+    }
+    
+    
+    form {
+       margin-top: 20px;
+    }
+    
+    
+    input[type="radio"] {
+       display: none; /* Hide the radio button */
+    }
+    
+    
+    button {
+       margin-top: 50px;
+       padding: 15px 30px; /* Increase button padding */
+       background-color: #60c463; /* Green button color */
+       color: white;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       font-size: 20px; /* Decrease button font size */
+       transition: background-color 0.3s; /* Smooth transition for background color */
+    }
+    
+    
+    button:hover {
+       background-color: #3a903c; /* Darker green on hover */
+    }
+    
+    
+    /* Back button */
+    .back-button {
+       display: inline-block;
+       margin-top: 20px;
+       padding: 15px 30px;
+       background-color: #f15856; /* Coral button color */
+       color: white;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       font-size: 20px;
+       text-decoration: none;
+       transition: background-color 0.3s;
+    }
+    
+    
+    .back-button:hover {
+       background-color: #D20033; /* Darker coral on hover */
+    }
+    
+    
+    .container {
+       display: flex;
+       flex-direction: column; /* Align children vertically */
+       justify-content: center; /* Center children horizontally */
+       align-items: center; /* Center children vertically */
+       width: 50%; /* Adjust as needed */
+       height: auto; /* Adjust as needed */
+       margin: 60px auto;
+       background-color: #FFFFFF; /* White background color */
+       border-radius: 10px; /* Rounded corners */
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+       padding: 20px; /* Add padding */
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavor Finder - Budget</title>
+    <link rel="stylesheet" href="css/question3.css">
+</head>
+<body style="background-image: url('https://media.istockphoto.com/id/165061345/sv/vektor/kitchen.jpg?s=612x612&w=0&k=20&c=SuRNxdeZ4XgjEPx2r-gd8xPAUTv7jFHW8DgG8LV4RkY='); background-size: cover;">
+    <div class="container">
+    <header>
+        <h1>Budget</h1>
+    </header>
+    
+    <main>
+        <form action="/question4" method="post">
+            <div class="cuisine-container">
+                <div class="cuisine-option">
+                    <input type="radio" id="lowBudget" name="budget" value="lowBudget">
+                    <label for="lowBudget"><img src="https://static.vecteezy.com/system/resources/previews/024/043/960/non_2x/money-coins-clipart-transparent-background-free-png.png" alt="Low Budget"></label>
+                    <span>Low ($)</span>
+                </div>
+                <div class="cuisine-option">
+                    <input type="radio" id="medBudget" name="budget" value="medBudget">
+                    <label for="medBudget"><img src="https://img.freepik.com/premium-vector/money-dollar-bill-cartoon-vector-illustration_401949-17.jpg" alt="Medium Budget"></label>
+                    <span>Medium ($$)</span>
+                </div>
+                <div class="cuisine-option">
+                    <input type="radio" id="highBudget" name="budget" value="highBudget">
+                    <label for="highBudget"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/717-money-bag.svg/2048px-717-money-bag.svg.png" alt="High Budget"></label>
+                    <span>High ($$$+)</span>
+                </div>
+            </div>
+            <a href="/question1" class="back-button">Back</a>
+            <button type="submit">Next</button>
+        </form>
+    </main>
+    </div>
+</body>
+</html>
+
+
+
+
